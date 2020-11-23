@@ -1,0 +1,17 @@
+.profile {
+    width: calc(100% - (2*19px));
+    display: grid;
+    justify-items: center;
+    color: #fff;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (min-width: 1280px) {
+    .profile {
+        max-width: calc(100% - (2*200px));
+        grid-template-columns: max-content max-content 1fr;
+        grid-template-rows: max-content;
+
+    }
+    
+}

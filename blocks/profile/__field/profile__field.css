@@ -1,0 +1,16 @@
+.profile__field {
+    margin: 0;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    line-height: calc(16.94/14);
+}
+
+@media screen and (min-width: 1280px) {
+    .profile__field {
+        font-size: 18px;
+        text-align: left;
+        line-height: calc(21.78/18);
+    }
+}
