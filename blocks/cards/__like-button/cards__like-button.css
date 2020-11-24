@@ -1,0 +1,5 @@
+.cards__like-button {
+    border: none;
+    background-color: #fff;
+    align-self: flex-end;
+}

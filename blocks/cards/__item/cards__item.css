@@ -1,0 +1,8 @@
+.cards_item {
+    margin: 0;
+    max-width: 100%;
+    object-fit: contain;
+    display: grid;
+    
+    
+}
