@@ -10,9 +10,8 @@
 @media screen and (min-width: 1280px) {
     .profile {
         max-width: calc(100% - (2*200px));
-        grid-template-columns: max-content minmax(min-content, max-content) 1fr;
+        grid-template-columns: max-content minmax(min-content, 500px) 1fr;
         grid-template-rows: minmax(min-content, max-content);
-
     }
     
 }
