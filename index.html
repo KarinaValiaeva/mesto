@@ -18,13 +18,9 @@
         <section class="profile page__profile">
           <img class="profile__avatar" src="./images/Avatar.jpg" alt="Аватар">
           <div class="profile__info">
-<!-- это будет в JS -->
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button">
-              <img class="edit-button" src="./images/Vector.svg" alt="Кнопка редактировать">
-            </button>
+            <button class="profile__edit-button"></button>
             <p class="profile__field">Исследователь океана</p> 
-<!--                -->
           </div>
           <button class="profile__add-button">
             <img class="add-button" src="./images/add_button.svg" alt="Кнопка добавить">
@@ -35,44 +31,42 @@
               <img class="cards__photo" src="./images/Karachaevsk.jpg" alt="Карачаевск">
               <figcaption class="cards__caption">
               <p class="cards__title">Карачаево-Черкессия</p>
-              <button class="cards__like-button" type="button">
-                <img class="like-button" src="./images/like.svg">
-              </button>
+              <button class="cards__like-button" type="button"></button>
               </figcaption>
             </figure>
             <figure class="cards_item">
               <img class="cards__photo" src="./images/Elbrus.jpg" alt="Гора Эльбрус">
               <figcaption class="cards__caption">
               <p class="cards__title">Гора Эльбрус</p>
-              <img class="like-button" src="./images/like.svg" type="button">
+              <button class="cards__like-button" type="button"></button>
               </figcaption>
            </figure>
             <figure class="cards_item">
               <img class="cards__photo" src="./images/Dombai.jpg" alt="Домбай">
               <figcaption class="cards__caption">
               <p class="cards__title">Домбай</p>
-              <img class="like-button" src="./images/like.svg" type="button">
+              <button class="cards__like-button" type="button">
               </figcaption>
             </figure>
             <figure class="cards_item">
               <img class="cards__photo" src="./images/Elbrus.jpg" alt="Гора Эльбрус">
               <figcaption class="cards__caption">
               <p class="cards__title">Гора Эльбрус</p>
-              <img class="like-button" src="./images/like.svg" type="button">
+              <button class="cards__like-button" type="button">
               </figcaption>
             </figure>
             <figure class="cards_item">
               <img class="cards__photo" src="./images/Dombai.jpg" alt="Домбай">
               <figcaption class="cards__caption">
               <p class="cards__title">Домбай</p>
-              <img class="like-button" src="./images/like.svg" type="button">
+              <button class="cards__like-button" type="button">
               </figcaption>
             </figure>
             <figure class="cards_item">
               <img class="cards__photo" src="./images/Karachaevsk.jpg" alt="Карачаевск">
               <figcaption class="cards__caption">
               <p class="cards__title">Карачаево-Черкессия</p>
-              <img class="like-button" src="./images/like.svg" type="button">
+              <button class="cards__like-button" type="button">
               </figcaption>
             </figure>
         </section>
@@ -81,7 +75,18 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
     </div>
-    <script></script>
+    <div class="popup">
+           <div class="popup__container">
+        <button class="popup__button-close" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="form">
+          <input class="form__text form__text_type_name" type="text">
+          <input class="form__text form__text_type_field" type="text">
+          <button class="form__button-submit" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <script src="./pages/index.js"></script>
 </body>
 </html>
 

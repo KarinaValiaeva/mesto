@@ -6,6 +6,12 @@
     justify-content: center;
     margin-top: 33px;
     padding: 0;
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+
+.profile__add-button:hover {
+    opacity: .6;
 }
 
 @media screen and (min-width: 1280px) {

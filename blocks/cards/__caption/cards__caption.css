@@ -1,6 +1,7 @@
 .cards__caption {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     background-color: #fff;
     color: #000;
     border-radius: 0 0 10px 10px;

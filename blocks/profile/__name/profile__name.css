@@ -4,6 +4,9 @@
     font-weight: 500;
     font-size: 27px;
     line-height: calc(32.68/27);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
    
 }
 
