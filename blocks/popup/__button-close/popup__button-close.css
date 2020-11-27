@@ -2,23 +2,21 @@
     position: absolute;
     top: -45px;
     right: 5px;
-    background-image: url('../../../images/Close_icon.svg');
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
+    transform: rotate(-45deg);
     padding: 0;
     border: none;
     width: 26px;
     height: 26px;
     cursor: pointer;
     transition: opacity 1s ease;
+    background-color: transparent;
 }
 
 .popup__button-close:hover {
     opacity: .6;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768 px) {
     .popup__button-close {
         width: 40px;
         height: 40px;
@@ -26,3 +24,5 @@
         right: -40px;
     }
 }
+
+

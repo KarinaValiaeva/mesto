@@ -10,6 +10,14 @@
     overflow: hidden;
 }
 
+@media screen and (min-width: 1024px) {
+    .profile__field {
+        font-size: 18px;
+        text-align: left;
+        line-height: calc(21.78/18);
+    }
+}
+
 @media screen and (min-width: 1280px) {
     .profile__field {
         font-size: 18px;

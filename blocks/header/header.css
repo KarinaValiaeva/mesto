@@ -2,7 +2,12 @@
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid #545454;
+}
 
+@media screen and (min-width: 1024px) {
+    .header {
+        max-width: calc(100% - (2*100px));
+    }
 }
 
 @media screen and (min-width: 1280px) {
