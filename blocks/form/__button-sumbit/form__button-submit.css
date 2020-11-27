@@ -9,6 +9,12 @@
     line-height: calc(16.94/14);
     padding: 15px;
     margin-top: 45px;
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+
+.form__button-submit:hover {
+    opacity: .8;
 }
 
 @media screen and (min-width: 768px) {
