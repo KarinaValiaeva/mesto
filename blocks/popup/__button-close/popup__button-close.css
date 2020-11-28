@@ -5,6 +5,7 @@
     transform: rotate(-45deg);
     padding: 0;
     border: none;
+    outline: none;
     width: 26px;
     height: 26px;
     cursor: pointer;

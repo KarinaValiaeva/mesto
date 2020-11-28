@@ -16,12 +16,3 @@
         justify-self: flex-start;
     }
 }
-
-@media screen and (min-width: 1280px) {
-    .profile__info {
-        margin-left: 33px;
-        row-gap: 4px;
-        column-gap: 18px;
-        justify-self: flex-start;
-    }
-}
