@@ -25,6 +25,9 @@ const initialCards = [
     }
 ];
 
+
+
+
 let profileEditButton = document.querySelector('.profile__edit-button');
 let popup = document.querySelector('.popup');
 let popupCloseButton = document.querySelector('.popup__button-close');
@@ -34,6 +37,22 @@ let formElement = document.querySelector('.popup__form');
 let nameInput = formElement.querySelector('.popup__input_type_name');
 let jobInput = formElement.querySelector('.popup__input_type_job');
 let cards = document.querySelector('.cards');
+
+ 
+///////// Секция cards
+
+const cardTemplate = document.querySelector('#card').content;
+
+const cardElements = initialCards.map(el => {
+    const cardElement = cardTemplate.cloneNode(true);
+    cardElement.querySelector('.cards__title').textContent = el.name;
+    cardElement.querySelector('.cards__photo').src = el.link;
+    return cardElement;
+})
+
+cards.append(...cardElements);
+
+/////////
 
 function addPopupOpened() {
     popup.classList.add('popup_opened');
