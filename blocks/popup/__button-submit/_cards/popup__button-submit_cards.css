@@ -1,0 +1,10 @@
+.popup__button-submit_cards {
+    margin-top: 32px;
+    padding: 14px;
+}
+
+@media screen and (min-width: 768px) {
+    .popup__button-submit_cards {
+        margin-top: 49px;
+    }
+}

@@ -1,0 +1,9 @@
+.popup__title_cards {
+    margin: 30px auto 32px;
+}
+
+@media screen and (min-width: 768px) {
+    .popup__title_cards {
+        margin: 34px auto 44px;
+    }
+}
