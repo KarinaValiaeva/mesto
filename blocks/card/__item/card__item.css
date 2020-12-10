@@ -1,6 +1,8 @@
-.cards__item {
+.card__item {
+    position: relative;
     margin: 0;
     max-width: 100%;
     object-fit: contain;
     display: grid;
+   
 }

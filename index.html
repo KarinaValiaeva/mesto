@@ -28,48 +28,16 @@
         </button>
       </section>
       <section class="cards page__cards">
-        <!--<figure class="cards__item">
-          <img class="cards__photo" src="./images/photo-karachaevsk.jpg" alt="Карачаевск">
-          <figcaption class="cards__caption">
-            <h2 class="cards__title">Карачаево-Черкессия</h2>
-            <button class="cards__like-button" type="button"></button>
-          </figcaption>
-        </figure>
-        <figure class="cards__item">
-          <img class="cards__photo" src="./images/photo-elbrus.jpg" alt="Гора Эльбрус">
-          <figcaption class="cards__caption">
-            <h2 class="cards__title">Гора Эльбрус</h2>
-            <button class="cards__like-button" type="button"></button>
-          </figcaption>
-        </figure>
-        <figure class="cards__item">
-          <img class="cards__photo" src="./images/photo-dombai.jpg" alt="Домбай">
-          <figcaption class="cards__caption">
-            <h2 class="cards__title">Домбай</h2>
-            <button class="cards__like-button" type="button"></button>
-          </figcaption>
-        </figure>
-        <figure class="cards__item">
-          <img class="cards__photo" src="./images/photo-elbrus.jpg" alt="Гора Эльбрус">
-          <figcaption class="cards__caption">
-            <h2 class="cards__title">Гора Эльбрус</h2>
-            <button class="cards__like-button" type="button"></button>
-          </figcaption>
-        </figure>
-        <figure class="cards__item">
-          <img class="cards__photo" src="./images/photo-dombai.jpg" alt="Домбай">
-          <figcaption class="cards__caption">
-            <h2 class="cards__title">Домбай</h2>
-            <button class="cards__like-button" type="button"></button>
-          </figcaption>
-        </figure>
-        <figure class="cards__item">
-          <img class="cards__photo" src="./images/photo-karachaevsk.jpg" alt="Карачаевск">
-          <figcaption class="cards__caption">
-            <h2 class="cards__title">Карачаево-Черкессия</h2>
-            <button class="cards__like-button" type="button"></button>
-          </figcaption>
-        </figure>-->
+        <template class="card">
+          <figure class="card__item">
+            <button class="card__btn-remove" type="button"></button>
+            <img class="card__photo" src="" alt="Фото">
+            <figcaption class="card__caption">
+              <h2 class="card__title"></h2>
+              <button class="card__like-button" type="button"></button>
+            </figcaption>
+          </figure>
+        </template> 
       </section>
     </main>
     <footer class="footer page__footer">
@@ -89,19 +57,30 @@
       </form>
     </div>
   </div>
-
-  <template id="card">
-   
-
-    <figure class="cards__item">
-      <img class="cards__photo" src="" alt="Фото">
-      <figcaption class="cards__caption">
-        <h2 class="cards__title"></h2>
-        <button class="cards__like-button" type="button"></button>
-      </figcaption>
-
-
-</template> 
+  <div class="popup popup_cards">
+    <div class="popup__container">
+      <button class="popup__button-close" type="button">
+        <img class="button button_close" src="./images/button.svg" alt="Кнопка закрыть">
+      </button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form popup__form_cards" name="popup__form">
+        <input class="popup__input popup__input_type_title" type="text" name="title" placeholder="Название">
+        <input class="popup__input popup__input_type_link" type="text" name="link" placeholder="Ссылка на картинку">
+        <button class="popup__button-submit" type="submit">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_image">
+      <figure class="popup__image">
+        <button class="popup__button-close popup__button-close_image" type="button">
+          <img class="button button_close" src="./images/button.svg" alt="Кнопка закрыть">
+        </button>
+        <img class="popup__photo" src="#" alt="Фото">
+        <figcaption class="popup__caption">
+          <h2 class="popup__title">Название фото</h2>
+        </figcaption>
+      </figure>
+  </div>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
