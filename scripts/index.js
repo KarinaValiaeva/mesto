@@ -136,17 +136,7 @@ profileEditButton.addEventListener('click', function () {
 });
 popupCloseButton.forEach((btn) => {
     btn.addEventListener('click', function () {
-        removePopupOpened(popupProfile);
-    })
-});
-popupCloseButton.forEach((btn) => {
-    btn.addEventListener('click', function () {
-        removePopupOpened(popupCards);
-    })
-});
-popupCloseButton.forEach((btn) => {
-    btn.addEventListener('click', function () {
-        removePopupOpened(popupImage);
+        removePopupOpened(document.querySelector('.popup_opened'));
     })
 });
 formProfileElement.addEventListener('submit', formProfileSubmitHandler);
