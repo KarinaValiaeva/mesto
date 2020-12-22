@@ -1,12 +1,12 @@
-.popup__image {
-    position: relative;
+.popup__container_image {
     margin-top: 136px;
     display: grid;
     gap: 10px;
+
 }
 
 @media screen and (min-width: 768px) {
-    .popup__image {
-        margin-top: 90px;
+    .popup__container_image {
+        margin: 90px auto;
     }
 }

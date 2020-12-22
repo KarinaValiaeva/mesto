@@ -6,7 +6,7 @@
     padding-bottom: 25px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
     .popup__form {
         width: calc(100% - (2*36px));
         padding-bottom: 35px;

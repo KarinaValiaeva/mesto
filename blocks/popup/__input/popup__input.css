@@ -7,18 +7,13 @@
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     padding-bottom: 8px;
+    padding-left: 0;
     box-sizing: border-box;
-    margin-bottom: 30px;
-}
-
-.popup__input:last-of-type {
-    margin-bottom: 0;
 }
 
 @media screen and (min-width: 768px) {
     .popup__input {
         padding-bottom: 8px;
         padding-top: 5px;
-        margin-bottom: 28px;
     }
 }

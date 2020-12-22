@@ -1,15 +1,9 @@
 .popup__input_cards {
-    margin-bottom: 17px;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.popup__input_cards:last-of-type {
-    margin-bottom: 0;
+    font-size: 12px;
 }
 
 @media screen and (min-width: 768px) {
     .popup__input_cards {
-        margin-bottom: 27px;
+        font-size: 14px;
     }
 }

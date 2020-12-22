@@ -1,15 +1,10 @@
-.popup__container {
+ .popup__container {
     position: relative;
-    width: 282px;
-    border-radius: 10px 10px 10px 10px;
-    background-color: #fff;
     box-sizing: border-box;
-    margin-top: 123px;
 }
 
 @media screen and (min-width: 768px) {
     .popup__container {
         margin-top: 195px;
-        width: 430px;
     }
-}
+} 
