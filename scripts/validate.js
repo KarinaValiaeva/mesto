@@ -41,7 +41,7 @@ const setButtonState = (button, isActive, config) => {
       button.disabled = false;
     } else {
         button.classList.add(config.inactiveButtonClass);
-        button.disabled = 'disabled';
+        button.disabled = true;
     }
 };
 
@@ -49,7 +49,6 @@ const setButtonState = (button, isActive, config) => {
 const setEventListeners = (form, config) => {
     const inputList = Array.from(form.querySelectorAll(config.inputSelector));
     const submitButton = form.querySelector(config.submitButtonSelector);
-    // toggleButtonState(inputList, buttonElement);
     inputList.forEach(input => {
       input.addEventListener('input', (evt) => {
         checkInputValidity(form, input, config);

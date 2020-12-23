@@ -25,39 +25,40 @@ function renderCards() {
 }
 
 function composeCards(el) {
-   const cardElement = cardTemplate.content.cloneNode(true);
-    cardElement.querySelector('.card__title').textContent = el.name;
-    cardElement.querySelector('.card__photo').src = el.link;
-    cardElement.querySelector('.card__photo').alt = el.name;
-    cardElement.querySelector('.card__like-button').addEventListener('click', addLikeButton);
-    cardElement.querySelector('.card__photo').addEventListener('click', openPopupPhoto);
+    const cardElement = cardTemplate.content.cloneNode(true);
+    const cardTitle = cardElement.querySelector('.card__title');
+    const cardPhoto = cardElement.querySelector('.card__photo');
+    const cardLikeBtn = cardElement.querySelector('.card__like-button');
+    cardTitle.textContent = el.name;
+    cardPhoto.src = el.link;
+    cardPhoto.alt = el.name;
+    cardLikeBtn.addEventListener('click', addLikeButton);
+    cardPhoto.addEventListener('click', openPopupPhoto);
     addRemoveListenerToItem(cardElement);
     return cardElement;
 }
 
 // функция для лайков
 function addLikeButton(evt) {
-    const eventTarget = evt.target;
-        eventTarget.classList.toggle('card__like-button_active');
+    evt.target.classList.toggle('card__like-button_active');
 }
 
 // функция добавления новой карточки
 function addCard() {
-    const newCard = composeCards({name: titleInput.value, link: linkInput.value});
+    const newCard = composeCards({ name: titleInput.value, link: linkInput.value });
     cards.prepend(newCard);
 }
 
 // функция удаления карточки
- function removeCard(evt) {
-     const targetItem = evt.target.closest('.card__item');
-     targetItem.remove();
- }
+function removeCard(evt) {
+    evt.target.closest('.card__item').remove();
+}
 
 // функция для слушателя кнопки удаления карточки
- function addRemoveListenerToItem(item){       
-     const removeButton = item.querySelector('.card__btn-remove');
-     removeButton.addEventListener('click', removeCard);
- }
+function addRemoveListenerToItem(item) {
+    const removeButton = item.querySelector('.card__btn-remove');
+    removeButton.addEventListener('click', removeCard);
+}
 
 // функция для сохранения новых значений профиля
 function formProfileSubmitHandler(evt) {
@@ -69,7 +70,7 @@ function formProfileSubmitHandler(evt) {
 
 // popup image
 function openPopupPhoto(evt) {
-    addPopupOpened(popupImage);  
+    addPopupOpened(popupImage);
     const targetItem = evt.target.closest('.card__item');
     const targetPhoto = targetItem.querySelector('.card__photo');
     popupPhoto.src = targetPhoto.src;
@@ -79,29 +80,29 @@ function openPopupPhoto(evt) {
 }
 
 // функция для сохранения новой карточки
- function formSubmitHandlerCards(evt) {
-     evt.preventDefault();
-     addCard();
-     titleInput.value = '';
-     linkInput.value = '';
-     removePopupOpened(popupCards);
-
- }
+function formSubmitHandlerCards(evt) {
+    evt.preventDefault();
+    addCard();
+    formElementCards.reset();
+    removePopupOpened(popupCards);
+}
 
 // функция открытия попапов
 function addPopupOpened(item) {
-     item.classList.add('popup_opened');
+    item.classList.add('popup_opened');
+    document.addEventListener('keydown', keyHandler);
 }
 
- // функция закрытия попапов 
- function removePopupOpened(item) {
+// функция закрытия попапов 
+function removePopupOpened(item) {
     item.classList.remove('popup_opened');
+    document.removeEventListener('keydown', keyHandler);
 }
 
- //функция закрытия попапа по нажатию на Esc
+//функция закрытия попапа по нажатию на Esc
 function keyHandler(evt) {
     if (evt.key === 'Escape') {
-        removePopupOpened(document.querySelector('.popup_opened'))
+        removePopupOpened(document.querySelector('.popup_opened'));
     }
 }
 
@@ -126,10 +127,7 @@ popupCloseButton.forEach((btn) => {
     })
 });
 
-// нажатие на Esc
-document.addEventListener('keydown', keyHandler);
-
-// нажатие на оверлей
+// нажатие на оверлей 
 popup.forEach((popupItem) => {
     popupItem.addEventListener('click', function () {
         removePopupOpened(document.querySelector('.popup_opened'));
