@@ -28,6 +28,12 @@ export const validationConfig = {
     errorClass: 'popup__error_visible'
 };
 
+// создание экземпляров валидации форм
+const profileFormValidator= new FormValidator(validationConfig, formProfileElement);
+profileFormValidator.enableValidation();
+const newCardFormValidator= new FormValidator(validationConfig, formElementCards);
+newCardFormValidator.enableValidation();
+
 // функция добавления новой карточки
 function addCard() {
     const newCard = new Card({ name: titleInput.value, link: linkInput.value }, '.card');
@@ -78,14 +84,6 @@ function keyHandler(evt) {
     }
 }
 
-// функция для валидации
-function validateForm(form) {
-    const validForm = new FormValidator(validationConfig, form);
-    validForm.enableValidation();
-    validForm.setButtonState();
-    return validForm;
-}
-
 // отображение карточек из массива initialCards
 initialCards.forEach((item) => {
     const card = new Card(item, '.card');
@@ -93,23 +91,19 @@ initialCards.forEach((item) => {
     cards.append(cardElement);
 });
 
-//включение валидации для всех форм
-popupForm.forEach((form) => {
-    validateForm(form)
-});
-
-// нажатие на кнопку редактирования профиля
+// нажатие на кнопку добавления новой карточки
 profileAddButton.addEventListener('click', function () {
     addPopupOpened(popupCards);
-    validateForm(formElementCards).resetValidation();
+    newCardFormValidator.resetValidation();
 });
 
-// нажатие на кнопку добавления новой карточки
+
+// нажатие на кнопку редактирования профиля
 profileEditButton.addEventListener('click', function () {
     addPopupOpened(popupProfile);
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
-    validateForm(formProfileElement).resetValidation();
+    profileFormValidator.resetValidation();
 });
 
 // нажатие на крестик
