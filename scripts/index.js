@@ -2,7 +2,6 @@ import { Card } from './card.js';
 import { FormValidator } from './validate.js';
 const profileEditButton = document.querySelector('.profile__edit-button');
 const popup = [...document.querySelectorAll('.popup')];
-const popupForm = [...document.querySelectorAll('.popup__form')];
 const popupProfile = document.querySelector('.popup_profile');
 const popupCloseButton = [...document.querySelectorAll('.popup__button-close')];
 const profileName = document.querySelector('.profile__name');
