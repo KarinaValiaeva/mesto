@@ -10,12 +10,12 @@ import {
     validationConfig
 } from '../utils/constants.js';
 
+import Card from '../components/Card.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
-import createCard from '../utils/functions.js'
 
 // валидация для попапа редактирования профиля
 const profileFormValidator = new FormValidator(validationConfig, formProfileElement);
@@ -63,6 +63,13 @@ const popupProfileWithForm = new PopupWithForm(
     }
 );
 popupProfileWithForm.setEventListeners();
+
+// функция для создания экземпляра карточки
+function createCard(item) {
+    const card = new Card(item, '.card', popupWithImage);
+    const cardElements = card.generateCard();
+    return cardElements;
+}
 
 // нажатие на кнопку добавления новой карточки
 profileAddButton.addEventListener('click', function () {
