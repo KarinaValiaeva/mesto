@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./pages/index.css">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Место">
   <meta name="author" content="Карина Валяева">
@@ -12,19 +12,19 @@
   <div class="page__container">
     <header class="header page__header">
       <div class="header__logo">
-        <img class="logo" src="./images/logo.svg" alt="Логотип Место">
+        <img class="logo" src="<%=require('./images/logo.svg')%>" alt="Логотип Место">
       </div>
     </header>
     <main class="content">
       <section class="profile page__profile">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
+        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар">
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit-button" type="button"></button>
           <p class="profile__job">Исследователь океана</p>
         </div>
         <button class="profile__add-button" type="button">
-          <img class="button button_add" src="./images/button.svg" alt="Кнопка добавить">
+          <img class="button button_add" src="<%=require('./images/button.svg')%>" alt="Кнопка добавить">
         </button>
       </section>
       <section class="cards page__cards"></section>
@@ -36,7 +36,7 @@
   <div class="popup popup_profile">
     <div class="popup__container popup__container_profile">
       <button class="popup__button-close" type="button">
-        <img class="button button_close" src="./images/button.svg" alt="Кнопка закрыть">
+        <img class="button button_close" src="<%=require('./images/button.svg')%>" alt="Кнопка закрыть">
       </button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form popup__form_profile" name="popup__form" novalidate>
@@ -55,12 +55,12 @@
   <div class="popup popup_cards">
     <div class="popup__container popup__container_cards">
       <button class="popup__button-close popup__button-close_cards" type="button">
-        <img class="button button_close" src="./images/button.svg" alt="Кнопка закрыть">
+        <img class="button button_close" src="<%=require('./images/button.svg')%>" alt="Кнопка закрыть">
       </button>
       <h2 class="popup__title popup__title_cards">Новое место</h2>
       <form class="popup__form popup__form_cards" name="popup__form" novalidate>
         <label class ="popup__form-field popup__form-field_cards">
-          <input class="popup__input popup__input_cards popup__input_type_title" id="title-input" type="text" name="title" placeholder="Название" required minlength="2" maxlength="30">
+          <input class="popup__input popup__input_cards popup__input_type_title" id="title-input" type="text" name="name" placeholder="Название" required minlength="2" maxlength="30">
           <span class="popup__error" id="title-input-error"></span>
         </label>  
         <label class ="popup__form-field popup__form-field_cards">
@@ -74,7 +74,7 @@
   <div class="popup popup_image">
       <figure class="popup__container popup__container_image">
         <button class="popup__button-close popup__button-close_image" type="button">
-          <img class="button button_close" src="./images/button.svg" alt="Кнопка закрыть">
+          <img class="button button_close" src="<%=require('./images/button.svg')%>" alt="Кнопка закрыть">
         </button>
         <img class="popup__photo" src="#" alt="Фото">
         <figcaption class="popup__caption">
@@ -92,7 +92,6 @@
       </figcaption>
     </figure>
   </template>
-  <script src="./scripts/initial-cards.js"></script>
-  <script type="module" src="./scripts/index.js"></script>
+  <!-- <script type="module" src="./pages/index.js"></script> -->
 </body>
 </html>
