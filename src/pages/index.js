@@ -6,7 +6,6 @@ import {
     formProfileElement,
     nameInput,
     jobInput,
-    cards,
     formElementCards,
     validationConfig
 } from '../utils/constants.js';
@@ -14,9 +13,9 @@ import {
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
-import Card from '../components/Card.js';
-import FormValidator from '../components/Validate.js';
+import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
+import createCard from '../utils/functions.js'
 
 // валидация для попапа редактирования профиля
 const profileFormValidator = new FormValidator(validationConfig, formProfileElement);
@@ -31,25 +30,22 @@ const popupWithImage = new PopupWithImage('.popup_image');
 popupWithImage.setEventListeners();
 
 // отрисовка карточек в секции cards
-const CardList = new Section({
+const cardList = new Section({
     items: initialCards,
     renderer: (item) => {
-        const card = new Card(item, '.card', popupWithImage);
-        const cardElement = card.generateCard();
-        cards.append(cardElement);
-        CardList.addItem(cardElement);
+        const cardElement = createCard(item)
+        cardList.addItem(cardElement);
     }
 }, '.cards');
-CardList.renderItems();
+cardList.renderItems();
 
 // создание экземпляра класса для попапа добавления новой карточки
 const popupCardsWithForm = new PopupWithForm(
     '.popup_cards',
     {
         handleFormSubmit: (item) => {
-            const newCard = new Card(item, '.card', popupWithImage);
-            const cardElement = newCard.generateCard();
-            cards.prepend(cardElement);
+            const cardElement = createCard(item)
+            cardList.prependItem(cardElement);
         }
     });
 popupCardsWithForm.setEventListeners();
@@ -61,7 +57,9 @@ const userInfo = new UserInfo({ name: '.profile__name', job: '.profile__job' });
 const popupProfileWithForm = new PopupWithForm(
     '.popup_profile',
     {
-        handleFormSubmit: (item) => { userInfo.setUserInfo(item) }
+        handleFormSubmit: (item) => {
+            userInfo.setUserInfo(item);
+        }
     }
 );
 popupProfileWithForm.setEventListeners();
