@@ -17,6 +17,7 @@ import UserInfo from '../components/UserInfo.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
 
+
 // валидация для попапа редактирования профиля
 const profileFormValidator = new FormValidator(validationConfig, formProfileElement);
 profileFormValidator.enableValidation();
