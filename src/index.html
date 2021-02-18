@@ -16,11 +16,14 @@
     </header>
     <main class="content">
       <section class="profile page__profile">
-        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар">
+        <div class="profile__image">
+          <img class="profile__avatar" id="avatar" src="#" alt="Аватар">
+          <button class="profile__edit-avatar" type="button"></button> 
+        </div>
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name" id="name"></h1>
           <button class="profile__edit-button" type="button"></button>
-          <p class="profile__job">Исследователь океана</p>
+          <p class="profile__job" id="about"></p>
         </div>
         <button class="profile__add-button" type="button">
           <img class="button button_add" src="<%=require('./images/button.svg')%>" alt="Кнопка добавить">
@@ -44,7 +47,7 @@
           <span class="popup__error" id="name-input-error"></span>
         </label>  
         <label class ="popup__form-field">
-          <input class="popup__input popup__input_type_job" id="job-input" type="text" name="job" required minlength="2" maxlength="200">
+          <input class="popup__input popup__input_type_job" id="job-input" type="text" name="about" required minlength="2" maxlength="200">
           <span class="popup__error" id="job-input-error"></span>
         </label>  
         <button class="popup__button-submit" type="submit">Сохранить</button>
@@ -70,6 +73,38 @@
       </form>
     </div>
   </div>
+
+  <div class="popup popup_remove-card">
+    <div class="popup__container popup__container_remove-card">
+      <button class="popup__button-close" type="button">
+        <img class="button button_close" src="<%=require('./images/button.svg')%>" alt="Кнопка закрыть">
+      </button>
+        <h2 class="popup__title popup__title_remove-card">Вы уверены?</h2>
+        <form class="popup__form popup__form_remove-card" name="popup__form" novalidate>
+        <button class="popup__button-submit popup__button-submit_remove-card" type="button">Да</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="popup popup_avatar">
+    <div class="popup__container popup__container_avatar">
+      <button class="popup__button-close" type="button">
+        <img class="button button_close" src="<%=require('./images/button.svg')%>" alt="Кнопка закрыть">
+      </button>
+      <h2 class="popup__title">Обновите аватар</h2>
+      <form class="popup__form popup__form_avatar" name="popup__form" novalidate>
+        <label class ="popup__form-field popup__form-field_avatar">
+          <input class="popup__input popup__input_avatar popup__input_type_link" id="link-input" type="url" name="link" required>
+          <span class="popup__error" id="link-input-error"></span>
+        </label>  
+        <button class="popup__button-submit" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+
+
   <div class="popup popup_image">
       <figure class="popup__container popup__container_image">
         <button class="popup__button-close popup__button-close_image" type="button">
@@ -87,7 +122,10 @@
       <img class="card__photo" src="#" alt="Фото">
       <figcaption class="card__caption">
         <h2 class="card__title"></h2>
-        <button class="card__like-button" type="button"></button>
+        <div class = "card__like">
+          <button class="card__like-button" type="button"></button>
+          <h2 class="card__like-counter">0</h2>
+        </div>
       </figcaption>
     </figure>
   </template>

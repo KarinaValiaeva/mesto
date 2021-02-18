@@ -1,0 +1,13 @@
+.popup__container_avatar {
+    width: 240px;
+    margin-top: 155px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    .popup__container_avatar {
+        margin-top: 224px;
+        width: 430px;
+    }
+}

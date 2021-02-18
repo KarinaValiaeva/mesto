@@ -1,0 +1,6 @@
+.popup__form_remove-card {
+    padding-bottom: 33px;
+    padding-top: 32px;
+    display: grid;
+    gap: 38px;
+}

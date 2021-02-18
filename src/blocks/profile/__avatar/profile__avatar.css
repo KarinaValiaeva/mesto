@@ -1,6 +1,8 @@
 .profile__avatar {
     width: 120px;
     border-radius: 50%;
+    position: relative;
+
 }
 
 @media screen and (min-width: 1280px) {
