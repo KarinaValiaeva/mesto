@@ -1,3 +1,10 @@
+const onError = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Ошибка: ${res.status}`)
+}
+
 export default class Api {
   constructor(options) {
     this.baseUrl = options.baseUrl;
@@ -5,29 +12,17 @@ export default class Api {
   }
 
   getUserInfo() {
-    return fetch(this.baseUrl + '/users/me ', { headers: this.headers })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      });
+    return fetch(`${this.baseUrl}/users/me`, { headers: this.headers })
+      .then(onError)
   }
 
   getInitialCards() {
-    return fetch(this.baseUrl + '/cards', { headers: this.headers })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      });
+    return fetch(`${this.baseUrl}/cards`, { headers: this.headers })
+      .then(onError)
   }
 
   postCard(data) {
-    return fetch(this.baseUrl + '/cards', {
+    return fetch(`${this.baseUrl}/cards`, {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify({
@@ -35,18 +30,12 @@ export default class Api {
         link: data.link
       })
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+      .then(onError)
   }
 
 
-  patch({name, about}) {
-    return fetch(this.baseUrl + '/users/me', {
+  patch({ name, about }) {
+    return fetch(`${this.baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this.headers,
       body: JSON.stringify({
@@ -54,13 +43,7 @@ export default class Api {
         about: about
       })
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      });
+      .then(onError)
   }
 
   deleteCard(id) {
@@ -68,29 +51,16 @@ export default class Api {
       method: 'DELETE',
       headers: this.headers
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+      .then(onError)
   }
 
 
   addLike(id) {
     return fetch(`${this.baseUrl}/cards/likes/${id}`, {
-      method: "PUT",
-      headers: this._headers,
+      method: 'PUT',
+      headers: this.headers
     })
-      .then(res => {
-        if (res.ok) {
-          console.log(res.json);
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      });
+      .then(onError)
   }
 
   deleteLike(id) {
@@ -98,32 +68,19 @@ export default class Api {
       method: 'DELETE',
       headers: this.headers
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
+      .then(onError)
   }
 
   updateAvatar(link) {
-    return fetch(this.baseUrl + '/users/me/avatar ', {
-    method: 'PATCH',
-    headers: this.headers,
-    body: JSON.stringify({
-      avatar: link
+    return fetch(`${this.baseUrl}/users/me/avatar`, {
+      method: 'PATCH',
+      headers: this.headers,
+      body: JSON.stringify({
+        avatar: link
+      })
     })
-  })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      // если ошибка, отклоняем промис
-      return Promise.reject(`Ошибка: ${res.status}`);
-    });
+      .then(onError)
+  }
+
 }
-  
-  // другие методы работы с API
-}
-  
+

@@ -1,0 +1,26 @@
+.popup__button-confirm {
+    width: calc(100% - (2*36px));
+    margin: auto;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(16.94/14);
+    padding: 15px;
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+
+.popup__button-confirm:hover {
+    opacity: .8;
+}
+
+@media screen and (min-width: 768px) {
+    .popup__button-confirm {
+        font-size: 18px;
+        line-height: calc(22/18);
+    }
+}

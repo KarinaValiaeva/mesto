@@ -6,6 +6,8 @@ export const jobInput = formProfileElement.querySelector('.popup__input_type_job
 export const cards = document.querySelector('.cards');
 export const formElementCards = document.querySelector('.popup__form_cards');
 export const formElementAvatar = document.querySelector('.popup__form_avatar');
+export const avatarEditButton = document.querySelector('.profile__edit-avatar');
+export const avatarPhoto = document.querySelector('.profile__avatar');
 export const validationConfig = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
