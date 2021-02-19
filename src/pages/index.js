@@ -21,6 +21,7 @@ import UserInfo from '../components/UserInfo.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
 
+let userId = null;
 
 // валидация для попапа редактирования профиля
 const profileFormValidator = new FormValidator(validationConfig, formProfileElement);
@@ -46,9 +47,11 @@ const api = new Api({
 // загрузка информации о пользователе на страницу
 api.getUserInfo()
     .then((item) => {
+        userId = item._id;
         avatarPhoto.src = item.avatar;
         document.querySelector('.profile__name').textContent = item.name;
         document.querySelector('.profile__job').textContent = item.about;
+        
     })
     .then(() => {
         // нажатие на кнопку редактирования профиля
@@ -162,7 +165,7 @@ popupWithImage.setEventListeners();
 
 // функция для создания карточки
 function createCard(item) {
-    const card = new Card(item, '.card', popupWithImage, api,
+    const card = new Card(item, '.card', popupWithImage, userId,
         {
             handleButtonDeleteCard: () => {
                 popupRemoveCard.setEventListeners(() => { removeCard(card) });

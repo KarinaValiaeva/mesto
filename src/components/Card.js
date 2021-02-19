@@ -1,5 +1,5 @@
 export default class Card {
-    constructor(data, cardSelector, handleCardClick, api, { handleButtonDeleteCard }, { handleLikeAddClick }, { handleLikeDelete }) {
+    constructor(data, cardSelector, handleCardClick, userId, { handleButtonDeleteCard }, { handleLikeAddClick }, { handleLikeDelete }) {
         this._title = data.name;
         this._photo = data.link;
         this._id = data.owner._id;
@@ -7,7 +7,7 @@ export default class Card {
         this._likes = data.likes;
         this._cardSelector = cardSelector;
         this._handleCardClick = handleCardClick;
-        this._api = api;
+        this._userId = userId;
         this._handleButtonDeleteCard = handleButtonDeleteCard;
         this._handleLikeAddClick = handleLikeAddClick;
         this._handleLikeDelete = handleLikeDelete;
@@ -40,17 +40,11 @@ export default class Card {
 
     // отображение активных лайков при перезагрузке
     _setLikeActive() {
-        this._api
-            .getUserInfo()
-            .then((data) => {
-                const userId = data._id;
-                this._likes.forEach((item) => {
-                    if (userId === item._id) {
-                        this._likeButton.classList.add('card__like-button_active');
-                    }
-                })
-            })
-            .catch((err) => console.log(err))
+        this._likes.forEach((item) => {
+            if (this._userId === item._id) {
+                this._likeButton.classList.add('card__like-button_active');
+            }
+        })
     }
 
     // метод для получения id карточки
@@ -61,15 +55,9 @@ export default class Card {
     // добавление корзины на карточку
     _addTrashCan() {
         this._btnRemove = this._element.querySelector('.card__btn-remove');
-        this._api
-            .getUserInfo()
-            .then((data) => {
-                const userId = data._id
-                if (userId === this._id) {
-                    this._btnRemove.classList.add('card__btn-remove_active');
-                }
-            })
-            .catch((err) => console.log(err))
+        if (this._userId === this._id) {
+            this._btnRemove.classList.add('card__btn-remove_active');
+        }
     }
 
     // метод постановки лайка (отображения состояние активного лайка и загрузкка на сервер)
