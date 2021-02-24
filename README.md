@@ -28,7 +28,7 @@
 
 ## Адрес проекта на GitHub Pages
 
-[Ссылка на проект на GitHub Pages](https://KarinaValiaeva.github.io/mesto)
+[Ссылка на проект на GitHub Pages](https://karinavaliaeva.github.io/mesto/)
 
 ## Планы по доработке проекта
 1. Доработать возможность менять аватар профиля.
